@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 테스트 페이지</title>
+</head>
+<body>
+    <h1> 자바스크립트 아홉 스푼  </h1>
+    <script>
+        let object = {
+            이름 : "최슬옹",
+            성별 : "남",
+            전공 : "경제학부",
+            좋아하는음식 : ["면류", "고기류", "해산물"],
+            노래추천 : [{가수 : "아이유", 곡명 : "무릎"},
+                {가수 : "진용진", 곡명 : "윌슨"}]
+        };
+        console.log(object);
+
+        object.성별="여";
+        console.log(object.성별);
+
+        console.log(object.노래추천[0]);
+
+        console.log(object.노래추천[1].곡명);
+
+        object.노래추천[1].가수 = "ITZY";
+        object.노래추천[1].곡명 = "WANNABE";
+        console.log(object.노래추천[1].가수, object.노래추천[1].곡명);
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>멋쟁이 사자처럼 자바스크립트 첫 번째 예제</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .container{
+            width: 100%;
+            position: relative;
+        }
+        .container_item{
+            width: 100%;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            /* 1번 */
+            position: absolute;
+            top: 0;
+            /* 2번 */
+            z-index: 0;
+            /* 3번 */
+            opacity: 0;
+            transition: opacity .5s ease-in-out;
+            
+        }
+        .container_item:nth-child(odd){
+            background-color: #202020;
+        }
+        .container_item:nth-child(even){
+            background-color: #606060;
+        }
+        .showCard{
+            /* 2번 */
+            z-index: 1;
+            /* 3번 */
+            opacity: 1;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="container_item"><h1>1</h1></div>
+        <div class="container_item"><h1>2</h1></div>
+        <div class="container_item"><h1>3</h1></div>
+        <div class="container_item"><h1>4</h1></div>
+        <div class="container_item"><h1>5</h1></div>
+    </div>
+    <script>
+        const ADD_CLASS = "showCard";
+        const firstCard = document.querySelector(".container_item:first-child");
+        function card(){
+            const currentCard = document.querySelector(`.${ADD_CLASS}`);
+            if(currentCard){
+                currentCard.classList.remove(ADD_CLASS);
+                const nextCard = currentCard.nextElementSibling;
+                if(nextCard){
+                    nextCard.classList.add(ADD_CLASS);
+                } else{
+                    firstCard.classList.add(ADD_CLASS);
+                }
+            }else{
+                firstCard.classList.add(ADD_CLASS);
+            }
+        }
+        card();
+        setInterval(card, 2000);
+    </script>
+</body>
+</html>

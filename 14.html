@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 테스트 페이지</title>
+</head>
+<body>
+    <h1 id="top"> 자바스크립트 </h1>
+    <h2 id="top"> 세 번째 세션 </h2>
+    <h3 id="top"> 예제가 기다리고 있어요(문제 푸는거 아님) </h3>
+
+    <h4 id="top">
+        DOM 이라고 들어봤어요? Document Object Model의 줄인말인데
+        <!-- <html> -->이나 <!-- <body> -->같은 HTML 태그들을 Javascript가 
+        이용할 수 있는 객체로 만들어 주는 것을 뜻한다고 하네요. 
+        선택자를 통해서 html파일을 자바스크립트로 제어하는 느낌 정도로 가져가시죠!
+    </h4>
+
+
+    <script>
+        const Query = document.querySelector("#top");
+        console.log(Query);
+
+        Query.innerHTML = "Javascript";
+        console.log(Query);
+
+        const QueryAll = document.querySelectorAll("#top");
+        console.log(QueryAll);
+
+        QueryAll[3].innerHTML = "구글은 모든 것을 알고 있죠!";
+        console.log(QueryAll[3]);
+    </script>
+</body>
+</html>
