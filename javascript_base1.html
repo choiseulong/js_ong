@@ -47,15 +47,21 @@
         const ADD_CLASS = "showCard";
         const firstCard = document.querySelector(".container_item:first-child");
         function card(){
-            const hasClass = firstCard.classList.contains(`${ADD_CLASS}`);
-            if(hasClass){
-                firstCard.classList.remove(ADD_CLASS);
+            const currentCard = document.querySelector(`.${ADD_CLASS}`);
+            if(currentCard){
+                currentCard.classList.remove(ADD_CLASS);
+                const nextCard = currentCard.nextElementSibling;
+                if(nextCard){
+                    nextCard.classList.add(ADD_CLASS);
+                }else{
+                    firstCard.classList.add(ADD_CLASS);
+                }
             }else{
                 firstCard.classList.add(ADD_CLASS);
             }
-            console.log(hasClass);
         }
         card();
+        setInterval(card, 2000);
     </script>
 </body>
 </html>
