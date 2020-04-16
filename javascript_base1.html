@@ -20,6 +20,8 @@
             justify-content: center;
             align-items: center;
             color: white;
+            position: absolute;
+            top: 0;
         }
         .container_item:nth-child(odd){
             background-color: #202020;
@@ -27,6 +29,10 @@
         .container_item:nth-child(even){
             background-color: #606060;
         }
+        .showCard{
+            z-index: 1;
+        }
+
     </style>
 </head>
 <body>
@@ -37,6 +43,19 @@
         <div class="container_item"><h1>4</h1></div>
         <div class="container_item"><h1>5</h1></div>
     </div>
-    <script></script>
+    <script>
+        const ADD_CLASS = "showCard";
+        const firstCard = document.querySelector(".container_item:first-child");
+        function card(){
+            const hasClass = firstCard.classList.contains(`${ADD_CLASS}`);
+            if(hasClass){
+                firstCard.classList.remove(ADD_CLASS);
+            }else{
+                firstCard.classList.add(ADD_CLASS);
+            }
+            console.log(hasClass);
+        }
+        card();
+    </script>
 </body>
 </html>
