@@ -116,7 +116,7 @@
         let all = document.querySelectorAll("button");
         
         for(let i = 0; i < all.length; i += 1){
-            if(i % 2 === 0){
+            if(i % 2 == 0){
                 all[i].addEventListener('click', function(){
                     window.scrollBy({ left:0, top:-1080, behavior:'smooth'});
                 })
