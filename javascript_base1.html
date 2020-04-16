@@ -44,24 +44,6 @@
         <div class="container_item"><h1>5</h1></div>
     </div>
     <script>
-        const ADD_CLASS = "showCard";
-        const firstCard = document.querySelector(".container_item:first-child");
-        function card(){
-            const currentCard = document.querySelector(`.${ADD_CLASS}`);
-            if(currentCard){
-                currentCard.classList.remove(ADD_CLASS);
-                const nextCard = currentCard.nextElementSibling;
-                if(nextCard){
-                    nextCard.classList.add(ADD_CLASS);
-                }else{
-                    firstCard.classList.add(ADD_CLASS);
-                }
-            }else{
-                firstCard.classList.add(ADD_CLASS);
-            }
-        }
-        card();
-        setInterval(card, 2000);
     </script>
 </body>
 </html>
