@@ -14,19 +14,19 @@
             position: relative;
             height: 5400px;
         }
-        .container_item{
+        .container_box{
             width: 100%;
             height: 500px;
             height: 1080px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             color: white;
         }
-        .container_item:nth-child(odd){
+        .container_box:nth-child(odd){
             background-color: #202020;
         }
-        .container_item:nth-child(even){
+        .container_box:nth-child(even){
             background-color: #606060;
         }
     </style>
@@ -69,6 +69,20 @@
             </div>
         </div>
     </div>
-    <script></script>
+    <script>
+        let all = document.querySelectorAll("button");
+        
+        for(let i = 0; i < all.length; i += 1){
+            if(i % 2 === 0){
+                all[i].addEventListener('click', function(){
+                    window.scrollBy({ left:0, top:-1080, behavior:'smooth'});
+                })
+            }else{
+                all[i].addEventListener('click', function(){
+                    window.scrollBy({ left:0, top:1080, behavior:'smooth'});
+                })
+            };
+        };
+    </script>
 </body>
 </html>
